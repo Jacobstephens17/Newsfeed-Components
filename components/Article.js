@@ -114,13 +114,45 @@ const data = [
   Refresh the page to see the new article.
 */
 
-const articleMaker = function(article){
+const articleMaker = function(articles){
   const article = document.createElement('div');
   const title = document.createElement('h2');
-  const content = document.createElement('p');
+  const dates = document.createElement('p')
   const expandButton = document.createElement('span');
+  const parOne = document.createElement('p');
+  const parTwo = document.createElement('p');
+  const parThree = document.createElement('p');
+
   
-  expandButton.addEventListener('click', function(){
-    article.textContent.toggle('article-open')
+  article.appendChild(title);
+  article.appendChild(dates);
+  article.appendChild(expandButton);
+  article.appendChild(parOne);
+  article.appendChild(parTwo);
+  article.appendChild(parThree);
+
+
+  
+  article.classList.add = 'article';
+  dates.classList.add = 'date'
+  expandButton.classList.add = 'article-open'
+
+  title.textContent = articles.title;
+  dates.textContent = articles.date;
+  expandButton.textContent = articles.expandButton;
+
+  parOne.textContent = articles.firstParagraph;
+  parTwo.textContent = articles.secondParagraph;
+  parThree.textContent = articles.thirdParagraph;
+
+  expandButton.addEventListener('click', function(event){
+    article.classList.toggle('article-open')
   })
+  return article;
 }
+
+const card = document.querySelector('.articles');
+data.forEach((item) =>{
+  let newCard = articleMaker(item);
+  card.appendChild(newCard);
+})
