@@ -124,15 +124,15 @@ const articleMaker = function(articles){
   const parThree = document.createElement('p');
 
   article.appendChild(title);
+  article.appendChild(expandButton);
   article.appendChild(dates);
   article.appendChild(parOne);
   article.appendChild(parTwo);
   article.appendChild(parThree);
-  article.appendChild(expandButton);
   
   article.classList.add = 'article';
   dates.classList.add = 'date';
-  expandButton.classList.add = 'article-open';
+  expandButton.classList.add = 'expandButton';
 
   title.textContent = articles.title;
   dates.textContent = articles.date;
@@ -141,10 +141,17 @@ const articleMaker = function(articles){
   parThree.textContent = articles.thirdParagraph;
   expandButton.textContent = '+';
 
-  expandButton.addEventListener('click', function(event){
-    expandButton.classList.toggle('article-open')
+  expandButton.addEventListener('click', function(){
+    article.classList.toggle('article-open');
+    dates.style.display = 'none';
+    parOne.style.display = 'none';
+    parTwo.style.display = 'none';
+    parThree.style.display = 'none';
+
   })
+
   return article;
+  
 }
 
 const card = document.querySelector('.articles');

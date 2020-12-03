@@ -47,19 +47,20 @@ const menuMaker = function(array){
 
   const menButton = document.querySelector('.menu');
   menButton.addEventListener('click', function(event){
-    menu.classList.toggle ('menu--open')
+    menButton.classList.toggle ('menu--open')
   });
 
   li.textContent = menuItems.forEach((menuItems) =>{
     let newItem = menuMaker(item);
     list.appendChild('newItem');
     
+
   })
+  const newMen = document.querySelector('.menu-button');
+    menuItems.forEach((item) => {
+      let newMenu = menuMaker(item);
+        newMen.append(newCard)
+})
 return menu;
 }
 
-const newMen = document.querySelector('.menu-button');
-menuItems.forEach((item) => {
-  let newMenu = menuMaker(item);
-  newMen.append(newCard)
-})
