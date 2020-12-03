@@ -123,7 +123,6 @@ const articleMaker = function(articles){
   const parTwo = document.createElement('p');
   const parThree = document.createElement('p');
 
-  
   article.appendChild(title);
   article.appendChild(dates);
   article.appendChild(expandButton);
@@ -131,8 +130,6 @@ const articleMaker = function(articles){
   article.appendChild(parTwo);
   article.appendChild(parThree);
 
-
-  
   article.classList.add = 'article';
   dates.classList.add = 'date'
   expandButton.classList.add = 'article-open'
@@ -155,4 +152,4 @@ const card = document.querySelector('.articles');
 data.forEach((item) =>{
   let newCard = articleMaker(item);
   card.appendChild(newCard);
-})
+});
