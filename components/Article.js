@@ -125,31 +125,30 @@ const articleMaker = function(articles){
 
   article.appendChild(title);
   article.appendChild(dates);
-  article.appendChild(expandButton);
   article.appendChild(parOne);
   article.appendChild(parTwo);
   article.appendChild(parThree);
-
+  article.appendChild(expandButton);
+  
   article.classList.add = 'article';
-  dates.classList.add = 'date'
-  expandButton.classList.add = 'article-open'
+  dates.classList.add = 'date';
+  expandButton.classList.add = 'article-open';
 
   title.textContent = articles.title;
   dates.textContent = articles.date;
-  expandButton.textContent = articles.expandButton;
-
   parOne.textContent = articles.firstParagraph;
   parTwo.textContent = articles.secondParagraph;
   parThree.textContent = articles.thirdParagraph;
+  expandButton.textContent = '+';
 
   expandButton.addEventListener('click', function(event){
-    article.classList.toggle('article-open')
+    expandButton.classList.toggle('article-open')
   })
   return article;
 }
 
 const card = document.querySelector('.articles');
 data.forEach((item) =>{
-  let newCard = articleMaker(item);
+  const newCard = articleMaker(item);
   card.appendChild(newCard);
 });

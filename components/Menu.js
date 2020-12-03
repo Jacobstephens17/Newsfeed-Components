@@ -52,8 +52,14 @@ const menuMaker = function(array){
 
   li.textContent = menuItems.forEach((menuItems) =>{
     let newItem = menuMaker(item);
-    menu.appendChild('newItem');
+    list.appendChild('newItem');
     
   })
 return menu;
 }
+
+const newMen = document.querySelector('.menu-button');
+menuItems.forEach((item) => {
+  let newMenu = menuMaker(item);
+  newMen.append(newCard)
+})
